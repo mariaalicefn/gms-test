@@ -32,3 +32,32 @@ Cypress.Commands.add('preencherCadastro', (nome, sobrenome, email, telefone, sen
     cy.get('#signup-password').type(senha)
     cy.get('#signup-button').click()
 })
+
+Cypress.Commands.add('preencherNomeVazio', (sobrenome, email, telefone, senha) => {
+    cy.get('#signup-lastname').type(sobrenome)
+    cy.get('#signup-email').type(email)
+    cy.get('#signup-phone').type(telefone)
+    cy.get('#signup-password').type(senha)
+    cy.get('#signup-button').click()
+})
+Cypress.Commands.add('preencherSobrenomeVazio', (nome, email, telefone, senha) => {
+    cy.get('#signup-firstname').type(nome)
+    cy.get('#signup-email').type(email)
+    cy.get('#signup-phone').type(telefone)
+    cy.get('#signup-password').type(senha)
+    cy.get('#signup-button').click()
+})
+Cypress.Commands.add('preencherEmailVazio', (nome,sobrenome, telefone, senha) => {
+    cy.get('#signup-firstname').type(nome)
+    cy.get('#signup-lastname').type(sobrenome)
+    cy.get('#signup-phone').type(telefone)
+    cy.get('#signup-password').type(senha)
+    cy.get('#signup-button').click()
+})
+Cypress.Commands.add('preencherSenhaVazia', (nome,sobrenome, email, telefone) => {
+    cy.get('#signup-firstname').type(nome)
+    cy.get('#signup-lastname').type(sobrenome)
+    cy.get('#signup-email').type(email)
+    cy.get('#signup-phone').type(telefone)
+    cy.get('#signup-button').click()
+})
